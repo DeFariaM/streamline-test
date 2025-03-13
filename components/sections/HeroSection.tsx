@@ -93,7 +93,7 @@ export default function HeroSection() {
           >
             <div className="relative overflow-hidden rounded-lg shadow-2xl">
               <Image
-                src="/placeholder.svg?height=600&width=800&text=Streamline+Dashboard"
+                src="/hero2.svg"
                 alt="Streamline Dashboard"
                 width={800}
                 height={600}
