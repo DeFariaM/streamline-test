@@ -1,4 +1,5 @@
 "use client";
+import ContactSection from "@/components/sections/ContactSection";
 import FeatureSection from "@/components/sections/FeatureSection";
 import HeroSection from "@/components/sections/HeroSection";
 import PricingSection from "@/components/sections/PricingSection";
@@ -41,6 +42,7 @@ export default function Home() {
       <FeatureSection />
       <TestimonialSection testimonials={testimonials} loading={loading} />
       <PricingSection />
+      <ContactSection />
     </div>
   );
 }

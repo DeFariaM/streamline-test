@@ -5,7 +5,10 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { variantProps, variantPropsDelay } from "@/lib/variants";
-import { errorToJSON } from "next/dist/server/render";
+import InputForm from "../InputForm";
+import TextareaForm from "../TextareaForm";
+import { Button } from "../ui/button";
+import useForm from "@/lib/handleChange";
 
 interface FormData {
   name: string;
@@ -14,29 +17,18 @@ interface FormData {
 }
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState<FormData>({
+  const initialValues = {
     name: "",
     email: "",
     message: "",
-  });
-  const [error, setErrors] = useState<Partial<FormData>>({});
+  };
+  const { formData, handleChange, setFormData } = useForm(initialValues);
+  const [errors, setErrors] = useState<Partial<FormData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-
-    //clean errors when user types in the fields
-    if (errors[name as keyof FormData]) {
-      setErrors((prev) => ({ ...prev, [name]: undefined }));
-    }
-  };
 
   const validateForm = () => {
     const newErrors: Partial<FormData> = {};
@@ -90,33 +82,49 @@ export default function ContactSection() {
           </motion.p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: 20 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.5 }}
-            className="rounded-lg border bg-card p-8 shadow-sm"
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={error.name ? "border-destructive" : ""}
-                />
-                {error.name && (
-                  <p className="text-sm text-destructive">{error.name}</p>
-                )}
-              </div>
-            </form>
-          </motion.div>
-        </div>
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: 20 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-2xl rounded-lg border bg-card p-8 shadow-sm"
+        >
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <InputForm
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className={errors.name ? "border-destructive" : ""}
+              label="Name"
+              error={errors.name}
+            />
+            <InputForm
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              className={errors.email ? "border-destructive" : ""}
+              label="Email"
+              error={errors.email}
+            />
+            <TextareaForm
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              className={errors.message ? "border-destructive" : ""}
+              label="Message"
+              error={errors.message}
+              rows={5}
+            />
+
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </Button>
+          </form>
+        </motion.div>
       </div>
     </section>
   );
