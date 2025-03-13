@@ -56,7 +56,7 @@ export default function Navbar() {
             <Button variant="outline" size="sm">
               Log in
             </Button>
-            <Button size="sm" className="bg-white">
+            <Button size="sm" className="bg-primary">
               Sign up
             </Button>
           </div>
