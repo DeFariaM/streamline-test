@@ -1,4 +1,6 @@
 import { Zap, BarChart3, Users, Lock } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
+
 export const navLinks = [
   {
     name: "Features",
@@ -43,4 +45,51 @@ export const features = [
     description:
       "Rest easy with SOC 2 compliance, end-to-end encryption, and advanced permission controls.",
   },
+];
+
+export const footerLinks = [
+  {
+    title: "Product",
+    links: [
+      { name: "Features", href: "#features" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "Testimonials", href: "#testimonials" },
+      { name: "FAQ", href: "#" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { name: "About", href: "#" },
+      { name: "Blog", href: "#" },
+      { name: "Careers", href: "#" },
+      { name: "Contact", href: "#contact" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { name: "Documentation", href: "#" },
+      { name: "Guides", href: "#" },
+      { name: "API Reference", href: "#" },
+      { name: "Support", href: "#" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { name: "Privacy Policy", href: "#" },
+      { name: "Terms of Service", href: "#" },
+      { name: "Cookie Policy", href: "#" },
+      { name: "GDPR", href: "#" },
+    ],
+  },
+];
+
+export const socialLinks = [
+  { name: "Facebook", icon: Facebook, href: "#" },
+  { name: "Twitter", icon: Twitter, href: "#" },
+  { name: "Instagram", icon: Instagram, href: "#" },
+  { name: "LinkedIn", icon: Linkedin, href: "#" },
+  { name: "GitHub", icon: Github, href: "#" },
 ];
