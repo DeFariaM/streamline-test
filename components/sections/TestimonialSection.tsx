@@ -9,8 +9,9 @@ import { Avatar, AvatarImage } from "../ui/avatar";
 interface Testimonial {
   id: number;
   name: string;
-  content: string;
+  body: string;
   email: string;
+  rating: number;
 }
 
 interface TestimonialSectionProps {
@@ -25,11 +26,6 @@ export default function TestimonialSection({
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  /* Generate a random rating */
-  const getRandomRating = () => {
-    return Math.floor(Math.random() * 2) + 4;
-  };
 
   /* Extract first name from email */
   const getFirstName = (email: string) => {
@@ -93,8 +89,7 @@ export default function TestimonialSection({
             animate={inView ? "visible" : "hidden"}
             className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
           >
-            {testimonials.map((testimonial) => {
-              const rating = getRandomRating();
+            {testimonials?.map((testimonial) => {
               const firstName = getFirstName(testimonial.email);
               return (
                 <motion.div key={testimonial.id} variants={itemVariants}>
@@ -102,20 +97,20 @@ export default function TestimonialSection({
                     <CardContent className="p-6">
                       <div className="mb-4 flex">
                         {[
-                          ...Array(5).map((_, i) => (
+                          [1, 2, 3, 4, 5].map((_, i) => (
                             <Star
                               key={i}
-                              className={`h-5 w-5 ${i < rating ? "fill-yellow-500 text-yellow-500" : "text-muted"}`}
+                              className={`h-5 w-5 ${i < testimonial.rating ? "fill-yellow-500 text-yellow-500" : "text-muted"}`}
                             />
                           )),
                         ]}
                       </div>
                       <p>
-                        {testimonial.content.length > 120
-                          ? `${testimonial.content.substring(0, 120)}...`
-                          : testimonial.content}
+                        {testimonial.body?.length > 120
+                          ? `${testimonial.body.substring(0, 120)}...`
+                          : testimonial.body}
                       </p>
-                      <div className="flex items-center">
+                      <div className="mt-4 flex items-center">
                         <Avatar className="mr-4 h-10 w-10">
                           <AvatarImage
                             src={`https://ui-avatars.com/api/?name=${firstName}&background=0D8ABC&color=fff&size=128`}
