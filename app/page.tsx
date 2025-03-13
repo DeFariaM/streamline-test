@@ -2,6 +2,7 @@
 import ContactSection from "@/components/sections/ContactSection";
 import FeatureSection from "@/components/sections/FeatureSection";
 import HeroSection from "@/components/sections/HeroSection";
+import NewsletterSection from "@/components/sections/NewsletterSection";
 import PricingSection from "@/components/sections/PricingSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import { RemoveFormattingIcon } from "lucide-react";
@@ -41,6 +42,7 @@ export default function Home() {
       <HeroSection />
       <FeatureSection />
       <TestimonialSection testimonials={testimonials} loading={loading} />
+      <NewsletterSection />
       <PricingSection />
       <ContactSection />
     </div>
