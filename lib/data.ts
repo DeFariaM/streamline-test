@@ -93,3 +93,50 @@ export const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, href: "#" },
   { name: "GitHub", icon: Github, href: "#" },
 ];
+
+export const pricingPlans = [
+  {
+    name: "Starter",
+    price: 9,
+    description: "Perfect for individuals and small projects",
+    features: [
+      "Up to 5 projects",
+      "Basic analytics",
+      "24-hour support response time",
+      "1 team member",
+    ],
+    cta: "Start Free Trial",
+    popular: false,
+  },
+  {
+    name: "Professional",
+    price: 29,
+    description: "Ideal for growing teams and businesses",
+    features: [
+      "Unlimited projects",
+      "Advanced analytics",
+      "4-hour support response time",
+      "Up to 10 team members",
+      "Custom integrations",
+      "Priority support",
+    ],
+    cta: "Start Free Trial",
+    popular: true,
+  },
+  {
+    name: "Enterprise",
+    price: 99,
+    description: "For large organizations with complex needs",
+    features: [
+      "Unlimited everything",
+      "Real-time analytics",
+      "1-hour support response time",
+      "Unlimited team members",
+      "Advanced security features",
+      "Dedicated account manager",
+      "Custom training",
+    ],
+    cta: "Contact Sales",
+    popular: false,
+  },
+];
