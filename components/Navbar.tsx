@@ -21,7 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navDesk = "text-md font-medium hover:text-primary transition-colors";
+  const navDesk = "text-lg font-medium hover:text-primary transition-colors";
   const navMob =
     "block py-2 text-sm font-medium hover:text-primary transition-colors";
   return (
@@ -36,7 +36,7 @@ export default function Navbar() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-2xl font-bold"
+              className="text-4xl font-bold"
             >
               Streamline
             </motion.div>
@@ -53,10 +53,10 @@ export default function Navbar() {
 
           <div className="hidden items-center space-x-4 md:flex">
             <ModeToggle />
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="lg" className="text-md">
               Log in
             </Button>
-            <Button size="sm" className="bg-primary">
+            <Button size="lg" className="text-md bg-primary">
               Sign up
             </Button>
           </div>
@@ -90,6 +90,19 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-md inline-block w-full"
+            >
+              Log in
+            </Button>
+            <Button
+              size="lg"
+              className="text-md inline-block w-full bg-primary"
+            >
+              Sign up
+            </Button>
           </motion.div>
         )}
       </div>

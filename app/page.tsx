@@ -5,7 +5,6 @@ import HeroSection from "@/components/sections/HeroSection";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import PricingSection from "@/components/sections/PricingSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
-import { RemoveFormattingIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {

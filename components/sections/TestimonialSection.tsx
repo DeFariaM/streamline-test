@@ -5,6 +5,12 @@ import { useInView } from "react-intersection-observer";
 import { Card, CardContent } from "../ui/card";
 import { Star } from "lucide-react";
 import { Avatar, AvatarImage } from "../ui/avatar";
+import {
+  containerVariants,
+  itemVariants,
+  variantProps,
+  variantPropsDelay,
+} from "@/lib/variants";
 
 interface Testimonial {
   id: number;
@@ -33,43 +39,18 @@ export default function TestimonialSection({
     return name.charAt(0).toUpperCase() + name.slice(1);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
     <section id="testimonials" className="py-20">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            {...variantProps}
             className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl"
           >
             What our customers say
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            {...variantPropsDelay}
             className="mx-auto max-w-2xl text-xl text-muted-foreground"
           >
             Don't just take our word for it - hear from some of our amazing
@@ -111,14 +92,14 @@ export default function TestimonialSection({
                           : testimonial.body}
                       </p>
                       <div className="mt-4 flex items-center">
-                        <Avatar className="mr-4 h-10 w-10">
+                        <Avatar className="mr-4 h-12 w-12">
                           <AvatarImage
                             src={`https://ui-avatars.com/api/?name=${firstName}&background=0D8ABC&color=fff&size=128`}
                           />
                         </Avatar>
                         <div>
-                          <p className="font-medium">{firstName}</p>
-                          <p className="text-xs text-muted-foreground">
+                          <p className="text-lg font-medium">{firstName}</p>
+                          <p className="text-sm text-muted-foreground">
                             {testimonial.email}
                           </p>
                         </div>

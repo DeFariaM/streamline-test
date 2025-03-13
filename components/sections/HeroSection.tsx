@@ -49,10 +49,10 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.6 }}
               className="flex flex-col gap-4 sm:flex-row"
             >
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="text-md">
                 <Link href="#pricing">Get Started</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="text-md">
                 <Link href="#features">Learn More</Link>
               </Button>
             </motion.div>

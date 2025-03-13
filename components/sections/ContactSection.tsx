@@ -78,7 +78,8 @@ export default function ContactSection() {
             {...variantPropsDelay}
             className="mx-auto max-w-2xl text-xl text-muted-foreground"
           >
-            Have questions or want to learn more? We'd love to hear from you.
+            Have questions or want to learn more? We&apos;d love to hear from
+            you.
           </motion.p>
         </div>
 
@@ -120,7 +121,11 @@ export default function ContactSection() {
               rows={5}
             />
 
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              className="text-md w-full"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>

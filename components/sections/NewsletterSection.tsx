@@ -51,7 +51,7 @@ export default function NewsletterSection() {
               onChange={handleChange}
               className="flex-grow"
             />
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting} className="text-md">
               {isSubmitting ? "Subscribing..." : "Subscribe"}
             </Button>
           </form>
