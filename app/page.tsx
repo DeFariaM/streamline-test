@@ -1,6 +1,7 @@
 "use client";
 import FeatureSection from "@/components/sections/FeatureSection";
 import HeroSection from "@/components/sections/HeroSection";
+import PricingSection from "@/components/sections/PricingSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import { RemoveFormattingIcon } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -39,6 +40,7 @@ export default function Home() {
       <HeroSection />
       <FeatureSection />
       <TestimonialSection testimonials={testimonials} loading={loading} />
+      <PricingSection />
     </div>
   );
 }
