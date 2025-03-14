@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Streamline - Mockup Project
 
-## Getting Started
+This project is a mockup of the **Streamline** platform, created with **Next.js**, **Tailwind CSS**, and some components from **ShadCN**. The goal is to showcase a functional and visually appealing design for a project management and team collaboration platform.
 
-First, run the development server:
+## Technologies Used
+
+- **Next.js**: A React framework for building optimized web applications.
+- **Tailwind CSS**: A CSS framework for rapid and flexible design.
+- **ShadCN**: A component library for easier UI development.
+
+## Features
+
+- **Attractive User Interface**: Clean and modern design focused on a great user experience.
+- **Light / Dark Mode Toggle**: Switch between light and dark themes to personalize the appearance based on user preferences.
+- **Intuitive Navigation**: Easy-to-use navigation structure allowing smooth exploration of the mockup sections.
+- **Reusable Components**: Utilizes **ShadCN** components to facilitate UI customization and extension.
+- **Page Previews**: Interactive prototype that simulates the complete navigation experience of the platform.
+- **Responsive Styles**: The design adapts to various screen sizes, providing an optimized view for both mobile and desktop devices.
+
+## Live Demo
+
+You can access the live demo of the Streamline mockup here: [Streamline - Live Demo](https://streamline-test.vercel.app/).
+
+## Quickstart
+
+Follow these steps to get the project running locally.
+
+### Prerequisites
+
+- **Node.js**: Make sure you have Node.js installed. If not, you can download it from [here](https://nodejs.org/).
+- **npm or yarn**: You’ll need a package manager. You can use `npm` (which comes with Node.js) or install `yarn`.
+
+### Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/DeFariaM/streamline-test.git
+   ```
+
+2. Navigate into the project directory:
+
+   ```bash
+   cd streamline-mockup
+   ```
+
+3. Install the dependencies:
+
+   If you’re using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or if you’re using yarn:
+
+   ```bash
+   yarn install
+   ```
+
+### Development
+
+To start the development server and view the project in your browser, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or with yarn:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site will be available at `http://localhost:3000`.
 
-## Learn More
+### Build
 
-To learn more about Next.js, take a look at the following resources:
+To build the app for production, run:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or with yarn:
 
-## Deploy on Vercel
+```bash
+yarn build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you'd like to contribute to this project, please fork the repository and create a pull request with your changes. Make sure to follow the style guidelines and test your changes before submitting.
