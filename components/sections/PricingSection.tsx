@@ -93,9 +93,24 @@ export default function PricingSection() {
                   <CardTitle className="text-3xl">{plan.name}</CardTitle>
                   <CardDescription>{plan.description}</CardDescription>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold">
-                      ${annual ? (plan.price * 0.8 * 12).toFixed() : plan.price}
-                    </span>
+                    <p className="text-4xl font-bold">
+                      $
+                      {annual ? (
+                        <span className="items-center">
+                          {(plan.price * 0.8 * 12).toFixed()}{" "}
+                          <span className="text-sm text-muted-foreground">
+                            / year
+                          </span>
+                        </span>
+                      ) : (
+                        <span className="items-center">
+                          {plan.price}{" "}
+                          <span className="text-sm text-muted-foreground">
+                            / month
+                          </span>
+                        </span>
+                      )}
+                    </p>
                   </div>
                 </CardHeader>
 
