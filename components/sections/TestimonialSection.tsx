@@ -53,7 +53,7 @@ export default function TestimonialSection({
             {...variantPropsDelay}
             className="mx-auto max-w-2xl text-xl text-muted-foreground"
           >
-            Don't just take our word for it - hear from some of our amazing
+            Don&apos;t just take our word for it - hear from some of our amazing
             customers
           </motion.p>
         </div>
