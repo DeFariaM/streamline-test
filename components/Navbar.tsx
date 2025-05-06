@@ -36,7 +36,7 @@ export default function Navbar() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-4xl font-bold"
+              className="flex items-center gap-2 text-4xl font-bold"
             >
               <Sprout className="h-6 w-6 text-primary" />
               <span className="text-2xl font-bold">Phaxsi</span>
