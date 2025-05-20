@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { navLinks } from "@/lib/data";
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
-import { Menu, X, Sprout } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,8 +38,7 @@ export default function Navbar() {
               transition={{ duration: 0.5 }}
               className="flex items-center gap-2 text-4xl font-bold"
             >
-              <Sprout className="h-6 w-6 text-primary" />
-              <span className="text-2xl font-bold">Phaxsi</span>
+              <span className="text-2xl font-bold">Streamline</span>
             </motion.div>
           </Link>
 
